@@ -39,7 +39,7 @@ var foxmosa_js = {
     document.body.append($fox_run);
 
     setTimeout( () => {
-      $foxmosa_run.style.right = '-192px';
+      $fox_run.style.right = '-192px';
     }, 1000)
   },
 
