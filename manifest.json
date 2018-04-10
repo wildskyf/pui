@@ -1,0 +1,27 @@
+{
+  "applications": {
+    "gecko": {
+      "id": "foxmosa@moztw.org",
+      "strict_min_version": "51.0"
+    }
+  },
+
+  "manifest_version": 2,
+  "name": "Foxmosa",
+  "version": "0.1.0",
+
+  "description": "Foxmosa is with you.",
+  "homepage_url": "https://moztw.org/foxmosa",
+
+  "icons": {
+    "48": "icons/icon48.png"
+  },
+
+  "permissions": ["<all_urls>", "menus"],
+
+  "content_scripts": [ ],
+
+  "background": {
+    "scripts": []
+  }
+}
