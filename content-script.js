@@ -1,41 +1,69 @@
 var foxmosa_js = {
-  $foxmosa: null,
+  $foxmosa_run: null,
   fox: {
-    run: "foxmosa-iwy-run"
+    run: "foxmosa-iwy-run",
+    find: "foxmosa-iwy-find"
   },
 
   init: () => {
     var me = foxmosa_js;
     if (document.querySelector('#' + me.fox.run)) return;
 
-    me.appendToPage();
+    me.createRunningFox();
     me.run();
+    me.appearWhenFind();
   },
 
-  appendToPage: () => {
+  appear: id => {
     var me = foxmosa_js;
-    var img = me.$foxmosa = document.createElement("IMG");
-    img.src = browser.extension.getURL('./run.gif');
-    img.id = me.fox.run;
+    var img = me.$foxmosa_run = document.createElement("IMG");
+    img.classList.add('foxmosa-iwy');
 
-    document.body.append(img);
+    switch(id) {
+      case 'run':
+        img.src = browser.extension.getURL('./run.gif');
+        break;
+      case 'find':
+        img.src = browser.extension.getURL('./find.png');
+        break;
+    }
+
+    img.id = me.fox[id];
+    return img;
+  },
+
+  createRunningFox: () => {
+    var me = foxmosa_js;
+    document.body.append(me.appear('run'));
   },
 
   run: () => {
     var me = foxmosa_js;
-    var doc_width = document.body.clientWidth;
-    var $foxmosa = me.$foxmosa;
+    var { $foxmosa_run } = me;
 
-    $foxmosa.style.top = 'calc(100vh - 91.5px)';
+    setTimeout( () => {
+      $foxmosa_run.style.right = '-192px';
+    }, 1000)
+  },
 
-    var left = 0;
-    var interval_id = setInterval( () => {
-      left += 6;
-      $foxmosa.style.left = left + 'px';
+  appearWhenFind: () => {
+    var me = foxmosa_js;
+    document.addEventListener('keydown', e => {
+      // ctrl/command + c
+      if (e.keyCode == 70 && (e.ctrlKey || e.metaKey)){
 
-      if (left > doc_width) {
+        var $fox_find = me.appear('find');
+        document.body.append($fox_find);
+
+        $fox_find.addEventListener('click', () => {
+
+          $fox_find.style.bottom = '-500px';
+          setTimeout(() => {
+            $fox_find.remove();
+          }, 1000);
+        });
       }
-    }, 30);
+    })
   }
 };
 

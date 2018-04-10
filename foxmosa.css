@@ -1,6 +1,22 @@
-#foxmosa-iwy-run {
+.foxmosa-iwy {
   position: fixed;
   z-index: 999999999;
-  width: 170px;
   height: auto;
+
+  transition-timing-function: ease-in-out;
+}
+
+#foxmosa-iwy-run {
+  width: 170px;
+  right: 100vw;
+  transition-duration: 6s;
+  bottom: -4.5px;
+}
+
+#foxmosa-iwy-find {
+  width: 108px;
+
+  transition-duration: 3s;
+  right: 50px;
+  bottom: 0;
 }

@@ -8,7 +8,7 @@
 
   "manifest_version": 2,
   "name": "Foxmosa",
-  "version": "0.2.1",
+  "version": "0.3.0",
 
   "description": "Foxmosa is with you.",
   "homepage_url": "https://moztw.org/foxmosa",
@@ -24,7 +24,7 @@
       "match_about_blank": true,
       "all_frames": false,
       "matches": ["<all_urls>"],
-      "run_at": "document_end",
+      "run_at": "document_idle",
       "css": ["foxmosa.css"],
       "js": ["content-script.js"]
     }
