@@ -8,7 +8,7 @@
 
   "manifest_version": 2,
   "name": "Foxmosa",
-  "version": "0.1.0",
+  "version": "0.1.2",
 
   "description": "Foxmosa is with you.",
   "homepage_url": "https://moztw.org/foxmosa",
@@ -19,9 +19,9 @@
 
   "permissions": ["<all_urls>", "menus"],
 
-  "content_scripts": [ ],
+  "content_scripts": [],
 
   "background": {
-    "scripts": []
+    "scripts": ["background.js"]
   }
 }
