@@ -1,10 +1,13 @@
 var foxmosa_js = {
   $foxmosa: null,
+  fox: {
+    run: "foxmosa-iwy-run"
+  },
 
   init: () => {
-    if (document.querySelector('#foxmosa-iwy')) return;
-
     var me = foxmosa_js;
+    if (document.querySelector('#' + me.fox.run)) return;
+
     me.appendToPage();
     me.run();
   },
@@ -13,7 +16,7 @@ var foxmosa_js = {
     var me = foxmosa_js;
     var img = me.$foxmosa = document.createElement("IMG");
     img.src = browser.extension.getURL('./run.gif');
-    img.id = "foxmosa-iwy";
+    img.id = me.fox.run;
 
     document.body.append(img);
   },
