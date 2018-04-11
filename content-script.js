@@ -46,8 +46,8 @@ var foxmosa_js = {
   appearWhenFind: () => {
     var me = foxmosa_js;
     document.addEventListener('keydown', e => {
-      // ctrl/command + c
-      if (e.keyCode == 70 && (e.ctrlKey || e.metaKey)) {
+      // ctrl/command + f/g
+      if ((e.keyCode == 70 || e.keyCode == 71) && (e.ctrlKey || e.metaKey)) {
 
         var $fox_find = me.appear('find');
 
