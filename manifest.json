@@ -1,17 +1,16 @@
 {
   "applications": {
     "gecko": {
-      "id": "foxmosa@moztw.org",
+      "id": "puipuimolcar@wildsky.cc",
       "strict_min_version": "51.0"
     }
   },
 
   "manifest_version": 2,
-  "name": "Foxmosa",
-  "version": "0.6.0",
+  "name": "Pui Pui Molcar",
+  "version": "0.1.0",
 
-  "description": "Foxmosa is with you.",
-  "homepage_url": "https://moztw.org/foxmosa",
+  "description": "Pui Pui!",
 
   "icons": {
     "48": "icons/icon48.png"

@@ -1,3 +1,5 @@
+const IS_DEV = false
+
 var foxmosa_js = {
   fox: {
     run: "foxmosa-iwy-run",
@@ -6,13 +8,13 @@ var foxmosa_js = {
 
   init: () => {
     var me = foxmosa_js;
-    me.randomly(me.createRunningFox, 30);
+    me.randomly(me.createRunningFox, IS_DEV ? 100 : 30);
     me.appearWhenFind();
   },
 
   randomly: (func, percent) => {
     var ran = Math.floor((Math.random() * 100) + 1); // 1 ~ 100
-    if (percent >= ran) return;
+    if (percent < ran) return;
     func();
   },
 
@@ -28,9 +30,9 @@ var foxmosa_js = {
       case 'run':
         img.src = browser.extension.getURL('./run.gif');
         break;
-      case 'find':
-        img.src = browser.extension.getURL('./find.png');
-        break;
+        // case 'find':
+        //   img.src = browser.extension.getURL('./find.png');
+        //   break;
     }
 
     img.id = me.fox[id];
