@@ -1,4 +1,4 @@
-# foxmosa
-A Firefox Add-on bringing Foxmosa into your Firefox
+# Pui Pui Molcar
+A Firefox Add-on bringing Molcar into your Firefox
 
-![running foxmosa](./run.gif)
+![running molcar](./run.gif)
