@@ -7,10 +7,10 @@
   },
 
   "manifest_version": 2,
-  "name": "Pui Pui Molcar",
-  "version": "0.5.0",
+  "name": "天竺鼠車車 Pui Pui Molcar",
+  "version": "0.6.0",
 
-  "description": "Pui Pui!",
+  "description": "安裝此套件可以讓天竺鼠車車時不時出現在網頁裡！（目前出現機率為 30%），裝這個擴充套件只是為了可愛而已，目前沒有其他實質的功能XD",
 
   "icons": {
     "48": "icons/icon48.png"
