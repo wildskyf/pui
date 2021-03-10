@@ -8,13 +8,17 @@
 
   "manifest_version": 2,
   "name": "Pui Pui Molcar",
-  "version": "0.3.0",
+  "version": "0.4.0",
 
   "description": "Pui Pui!",
 
   "icons": {
     "48": "icons/icon48.png"
   },
+
+  "web_accessible_resources": [
+    "run.gif"
+  ],
 
   "content_scripts": [
     {
