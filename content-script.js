@@ -28,7 +28,7 @@ var foxmosa_js = {
 
     switch(id) {
       case 'run':
-        img.src = browser.extension.getURL('./run.gif');
+        img.src = chrome.runtime.getURL('./run.gif');
         break;
         // case 'find':
         //   img.src = browser.extension.getURL('./find.png');
