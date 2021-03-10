@@ -1,14 +1,14 @@
 const IS_DEV = false
 
-var foxmosa_js = {
-  fox: {
-    run: "foxmosa-iwy-run",
-    find: "foxmosa-iwy-find"
+var molcar_js = {
+  car: {
+    run: "molcar-iwy-run",
+    find: "molcar-iwy-find"
   },
 
   init: () => {
-    var me = foxmosa_js;
-    me.randomly(me.createRunningFox, IS_DEV ? 100 : 30);
+    var me = molcar_js;
+    me.randomly(me.createRunningcar, IS_DEV ? 100 : 30);
     me.appearWhenFind();
   },
 
@@ -19,12 +19,13 @@ var foxmosa_js = {
   },
 
   appear: id => {
-    var me = foxmosa_js;
+    var me = molcar_js;
 
-    if (document.querySelector('#' + me.fox[id])) return;
+    if (document.querySelector('#' + me.car[id])) return;
 
     var img = document.createElement("IMG");
-    img.classList.add('foxmosa-iwy');
+    img.classList.add('molcar-iwy');
+    img.classList.add('always-enable-animations'); // fix for facebook
 
     switch(id) {
       case 'run':
@@ -35,41 +36,41 @@ var foxmosa_js = {
         //   break;
     }
 
-    img.id = me.fox[id];
+    img.id = me.car[id];
     return img;
   },
 
-  createRunningFox: () => {
-    var me = foxmosa_js;
-    var $fox_run = me.appear('run');
+  createRunningcar: () => {
+    var me = molcar_js;
+    var $car_run = me.appear('run');
 
-    if (!$fox_run) return;
-    document.body.append($fox_run);
+    if (!$car_run) return;
+    document.body.append($car_run);
 
     setTimeout( () => {
-      $fox_run.style.right = '-192px';
+      $car_run.style.right = '-192px';
     }, 1000)
   },
 
   appearWhenFind: () => {
-    var me = foxmosa_js;
-    var fox = {
+    var me = molcar_js;
+    var car = {
       $body: me.appear('find'),
       remove_timeout_id: null,
 
       show: () => {
-        fox.$body.style.bottom = 0;
-        document.body.append(fox.$body);
-        fox.$body.addEventListener('click', fox.leave);
+        car.$body.style.bottom = 0;
+        document.body.append(car.$body);
+        car.$body.addEventListener('click', car.leave);
 
-        if (fox.remove_timeout_id) clearTimeout(fox.remove_timeout_id);
+        if (car.remove_timeout_id) clearTimeout(car.remove_timeout_id);
       },
 
       leave: () => {
-        fox.$body.style.bottom = '-500px';
+        car.$body.style.bottom = '-500px';
 
-        fox.remove_timeout_id = setTimeout( () => {
-          fox.$body.remove();
+        car.remove_timeout_id = setTimeout( () => {
+          car.$body.remove();
         }, 1000);
       }
     }
@@ -77,14 +78,14 @@ var foxmosa_js = {
     document.addEventListener('keydown', e => {
       // ctrl/command + f/g
       if ((e.keyCode == 70 || e.keyCode == 71) && (e.ctrlKey || e.metaKey)) {
-        fox.show();
+        car.show();
       }
 
       if (e.keyCode == 27) {
-        fox.leave();
+        car.leave();
       }
     })
   }
 };
 
-foxmosa_js.init();
+molcar_js.init();

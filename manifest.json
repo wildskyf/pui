@@ -8,7 +8,7 @@
 
   "manifest_version": 2,
   "name": "Pui Pui Molcar",
-  "version": "0.2.0",
+  "version": "0.3.0",
 
   "description": "Pui Pui!",
 
@@ -22,7 +22,7 @@
       "all_frames": false,
       "matches": ["<all_urls>"],
       "run_at": "document_idle",
-      "css": ["foxmosa.css"],
+      "css": ["molcar.css"],
       "js": ["content-script.js"]
     }
   ],

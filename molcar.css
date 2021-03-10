@@ -1,22 +1,23 @@
-.foxmosa-iwy {
+.molcar-iwy {
   position: fixed ;
   z-index: 999999999;
   height: auto;
 
   transition-timing-function: ease-in !important;
 
-  animation: pujui .75s !important;
+  animation-name: pujui !important;
+  animation-duration: .75s !important;
   animation-iteration-count: infinite !important;
 }
 
-#foxmosa-iwy-run {
+#molcar-iwy-run {
   width: auto !important;
   right: 100vw;
-  transition-duration: 10s !important;
+  transition-duration: 50s !important;
   bottom: -4.5px;
 }
 
-#foxmosa-iwy-find {
+#molcar-iwy-find {
   width: 108px !important;
 
   transition-duration: 3s !important;
